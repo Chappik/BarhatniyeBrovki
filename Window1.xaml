@@ -1,0 +1,55 @@
+﻿<Window x:Class="BarhatniyeBrovki.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BarhatniyeBrovki"
+        mc:Ignorable="d"
+        Title="Клиенты" Height="450" Width="800">
+    
+    <DockPanel>
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#e1e4ff">
+            <Image Source="Images/beauty_logo.png" Margin="0,0,15,0" Height="90" />
+            <MenuItem Header="Назад " Margin="0,10,0,0" FontFamily="Tahoma" FontSize="14" Click="PerehodOnAdmin"/>
+        </StackPanel>
+        <ScrollViewer>
+            <StackPanel Background="White" >
+                <StackPanel Orientation="Vertical">
+                    <ListBox Name="lstBoxx" HorizontalAlignment="Left"  VerticalAlignment="Center" Background="#fff"  >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1" BorderBrush="Black">
+                                    <StackPanel Width="auto" Height="160" Margin="10" Orientation="Horizontal">
+
+                                        <StackPanel Margin="15" Orientation="Vertical" >
+
+                                            <StackPanel Orientation="Horizontal" >
+                                                <Label Content="id клиента:" FontFamily="Tahoma" FontSize="16"/>
+                                                <TextBlock x:Name="TitleEdit" Text="{Binding ClientID}" FontFamily="Tahoma" FontSize="17" Margin="0,5,0,0"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="id услуги:" FontFamily="Tahoma" FontSize="16"/>
+                                                <TextBlock Text="{Binding ServiceID }" FontFamily="Tahoma" FontSize="17" Margin="0,5,0,0"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Дата и время начала услуги:" FontFamily="Tahoma" FontSize="16"/>
+                                                <TextBlock Text="{Binding StartTime }" FontFamily="Tahoma" FontSize="17" Margin="0,5,0,0"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Фамилия клиента:" FontFamily="Tahoma" FontSize="16"/>
+                                                <TextBlock Text="{Binding Name }"  FontFamily="Tahoma" FontSize="17" Margin="0,5,0,0"/>
+                                            </StackPanel>
+
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                               
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
